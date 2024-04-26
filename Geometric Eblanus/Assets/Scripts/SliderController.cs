@@ -16,8 +16,9 @@ public class SliderController : MonoBehaviour
     }
     private void Update()
     {
-        if(oldVolume != slider.value)
+        if (oldVolume != slider.value)
         {
+            PlayerPrefs.SetInt("audioTrue", 1);
             PlayerPrefs.SetFloat("volume", slider.value);
             PlayerPrefs.Save();
             oldVolume = slider.value;
